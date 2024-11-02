@@ -3,20 +3,20 @@ ul {
     margin-left: 20px;
     padding: 0;
     overflow: hidden;
-    background-color: #18202D;
+    background-color: #222222;
 }
 
 ul.nav-list {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    background-color: #18202D;
+    background-color: #222222;
 }
 
 
 ul.my-list-style {
     list-style-type: disc;
-    color: #0000FF;
+    color: #ffffff;
     padding: 10px 20px;
 }
 
