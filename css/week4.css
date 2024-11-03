@@ -44,7 +44,7 @@ body {
     padding: 0;
     background-color: #18202D;
     color: #ffffff;
-    text-align: centre;
+    text-align: center;
 }
 
 header {
@@ -55,7 +55,7 @@ header {
 }
 
 h2 {
-    text-align: centre;
+    text-align: center;
 }
 
 nav a {
