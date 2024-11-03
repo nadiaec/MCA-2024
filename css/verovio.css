@@ -31,20 +31,6 @@ ul.nav-list {
     background-color: #222222;
 }
 
-ul.my-list-style {
-    list-style-type: disc;
-    color: #000000;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    text-align: left;
-}
-
-.my-list-style li {
-    display: list-item; 
-    margin-bottom: 5px;
-    color: #000000; 
-}
-
 div.container {
     max-width: 1200px;
     margin: 20px auto;
