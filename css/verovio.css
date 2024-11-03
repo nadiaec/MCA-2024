@@ -1,31 +1,16 @@
-html, body {
-     width: 100%;
-     height: 100%;
-     margin: 0;
-     padding: 0;
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
     }
-
-.box {
-     display: flex;
-     flex-flow: column;
-     height: 100vh;
+    .box {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
     }
-
-.box .header {
-   flex: 0 1 auto;
-   background-color: #18202D;
-   color: #F6F7FB;
-   padding: 20px;
-   text-align: center;
+    .box .header {
+       flex: 0 1 auto;
     }
-
-.box #app {
-  flex: 1 1 auto;
-  padding: 20px;
-  background-color: #1E2738;
-  }
-
-.box p {
-     margin: 0 20px 10px 20px;
-}
-
+    .box #app {
+        flex: 1 1 auto;
+    }
