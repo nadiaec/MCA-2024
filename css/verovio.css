@@ -13,6 +13,7 @@
     }
     .box #app {
         flex: 1 1 auto;
+        background-color: #ffffff
     }
 
 ul {
