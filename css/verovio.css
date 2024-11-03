@@ -13,7 +13,6 @@
     }
     .box #app {
         flex: 1 1 auto;
-        background-color: #ffffff
     }
 
 ul {
@@ -36,7 +35,7 @@ ul.my-list-style {
     list-style-type: disc;
     color: #ffffff;
     padding: 10px 20px;
-    background-color: #1E2738;
+    background-color: #ffffff;
     text-align: left;
 }
 
@@ -50,7 +49,7 @@ div.container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #1E2738; 
+    background-color: #ffffff; 
     border-radius: 5px;
     box-shadow: 0 0 10px rgb(152, 0, 0);
     color: #ffffff;
