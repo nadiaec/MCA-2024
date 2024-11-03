@@ -6,13 +6,13 @@ ul {
     background-color: #222222;
 }
 
+
 ul.nav-list {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
     background-color: #222222;
 }
-
 
 ul.my-list-style {
     list-style-type: disc;
@@ -21,10 +21,19 @@ ul.my-list-style {
     background-color: #1E2738;
 }
 
+.my-list-style li {
+    display: list-item; 
+    margin-bottom: 5px;
+    color: #ffffff; 
+}
 
-div {
-    background-color: #ffffff;
-    color: rgb(255, 255, 255);
+div.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2A3648; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(152, 0, 0);
 }
 
 body {
@@ -43,40 +52,26 @@ header {
     text-align: center;
 }
 
+
 nav a {
-    color: #222222;
-    text-decoration: none;
-    text-align: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #1E2738;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgb(152, 0, 0);
-}
-
-li {
-    float: inline-start;
-}
-
-li a {
-    display: block;
     color: #ffffff;
-    background-color: #222222;
+    text-decoration: none;
+    display: block;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+}
+
+.nav-list li {
+    display: inline-block;
 }
 
 li a:hover {
-    background-color: #222222;
+    background-color: #333333;
 }
 
-.my-list-style li {
-    display: list-item;
-    margin-bottom: 5px;
+div {
+    background-color: #ffffff;
+    color: #333333;
 }
+
   
