@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MCA - Week 3</title>
-
-<style>
+    <meta charset="utf-8">
+    <title>My Piece in Verovio</title>
+    <style>
     html, body {
         width: 100%;
         height: 100%;
@@ -23,37 +20,12 @@
     .box #app {
         flex: 1 1 auto;
     }
-</style>
-
+    </style>
 </head>
-	
 <body>
-    <div class="header">
-        <h1>Week 3</h1>
-    </div>
-
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">WEEK 1</a></li>
-            <li><a href="week2.html">WEEK 2</a></li>
-            <li><a href="verovio.html">WEEK 3</a></li>
-            <li><a href="week4.html">WEEK 4</a></li>
-            <li><a href="week5.html">WEEK 5</a></li>
-            <li><a href="week7.html">WEEK 7</a></li>
-            <li><a href="week8.html">WEEK 8</a></li>
-            <li><a href="week9.html">WEEK 9</a></li>
-            <li><a href="week10.html">WEEK 10</a></li>
-        </ul>
-    </nav>
-
-</body>
-
-<body>
-
     <div class="box">
-        <p>[Insert your response to task 2 here.]</p>
-    </div>
-
+    <div class="header"><h1>Week 3</h1>
+        <p>[Insert your response to task 2 here.]</p></div>
     <div id="app">Verovio is loading...</div>
     <script type="module">
         import 'https://www.verovio.org/javascript/app/verovio-app.js';
@@ -67,6 +39,8 @@
         
         // A MusicXML file
         var file = 'data/piratesmedley.mei';
+        // A MEI file
+        //var file = 'https://www.verovio.org/editor/brahms.mei';
         
         const app = new Verovio.App(document.getElementById("app"), options);
         fetch(file)
@@ -77,12 +51,13 @@
                 app.loadData(text);
             });
     </script>
+    </div>
 
 	<footer>
-	    <div id="menu">
-		    <a href="index.html">Homepage</a>
-	    </div>
+	<div id="menu">
+		<a href="index.html">Homepage</a>
+	</div>
 	</footer>
+    
 </body>
 </html>
-
