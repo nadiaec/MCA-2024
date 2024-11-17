@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MCA - Week 3</title>
+        <link rel="stylesheet" href="css/verovio.css">
+</head>
+<body>
 
+  <header>
+      <h1>Week 3</h1>
+  </header>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">WEEK 1</a></li>
+      <li><a href="week2.html">WEEK 2</a></li>
+      <li><a href="verovio.html">WEEK 3</a></li>
+      <li><a href="week4.html">WEEK 4</a></li>
+      <li><a href="https://nadiaec.github.io/MCA-2024/MCA-2024/week5.html">WEEK 5</a></li>
+      <li><a href="https://nadiaec.github.io/MCA-2024/MCA-2024/week7.html">WEEK 7</a></li>
+      <li><a href="https://nadiaec.github.io/MCA-2024/MCA-2024/week8.html">WEEK 8</a></li>
+      <li><a href="https://nadiaec.github.io/MCA-2024/MCA-2024/week9.html">WEEK 9</a></li>
+      <li><a href="https://nadiaec.github.io/MCA-2024/MCA-2024/week10.html">WEEK 10</a></li>
+    </ul>
+  </nav>
+
+</body>
+	
+<body>
+    <div class="box">
+    <div class="header"><h2>Task</h2>
+        <p>When comparing the 2 file types, I found that data in the MEI file was more detailed and precise. For example, the element 'note' in MusicXML showed the attributes for rest, duration, voice, type and staff. However in MEI, in addition to these attributes, it shows 'pname'. The children in both MusicXML and MEI include accidentals and octaves, however I found that articulation was only represented in the MEI file. The 'note' element in this case seems to be more detailed in the MEI file, perhaps making it more accommodating to various musical notations. The element 'chord' is also more detailed in the MEI file. In the MusicXML file, the element doesn’t have any children, whereas in the MEI file, the 'chord' element includes duration, articulation, note, pname, and octave. The one element I did find to have more detail in the MusicXML file was 'part-name'. In this file, the instrument used is more specific. It shows Piano, acoustic grand piano under instrument name, and keyboard piano under instrument sound. Overall, I think that the main difference between the two file types is that MusicXML is more straightforward making it easy to read and software compatible whereas MEI allows for more precision and detail making it the better type for more complex musical notation.</p></div>
+
+
+	<div id="app">Verovio is loading...</div>
+    <script type="module">
+        import 'https://www.verovio.org/javascript/app/verovio-app.js';
+        
+        const options = {
+            defaultView: 'responsive', // default is 'responsive', alternative is 'document'
+            defaultZoom: 3, // 0-7, default is 4
+            enableResponsive: true, // default is true
+            enableDocument: true // default is true
+        }
+        
+        // A MusicXML file
+        var file = 'data/piratesmedley.mei';
+        // A MEI file
+        //var file = 'https://www.verovio.org/editor/brahms.mei';
+        
+        const app = new Verovio.App(document.getElementById("app"), options);
+        fetch(file)
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(text) {
+                app.loadData(text);
+            });
+    </script>
+    </div>
+
+	<footer>
+	<div id="menu">
+		<a href="index.html">Homepage</a>
+	</div>
+	</footer>
+    
+</body>
+</html>
