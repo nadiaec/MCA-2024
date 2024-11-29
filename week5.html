@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>MCA - Week 5</title>
-        <link rel="stylesheet" href="css/week4.css">
+  <title>My Piece</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/myMeta.css" media="all" />
+  <link rel="stylesheet" href="css/week4.css" media="all" />
+  <script src="js/CETEI.js"></script>
 </head>
-<body>
+  
+ <body>
 
   <header>
-      <h1>Week 5: Standards in Curation</h1>
+      <h1>Week 5</h1>
   </header>
 
   <nav>
@@ -26,7 +28,7 @@
   </nav>
 
 </body>
-	
+  
     <h2>Task 1: Create Metadata Schema</h2>
     <div class="container">
         <section id="task1">
@@ -45,40 +47,66 @@
 		<li>Encoder</li>
             </ul>
      </div>
+  <div id="MEImeta"></div>
+  <div id="app" class="panel" style="border: 1px solid light gray; min-height: 800px;">Verovio is loading...</div>
+</div>
+<div class="container">
+  <div><p>[Discuss how you would format your metadata here]</p></div>
+</div>
+  <script type="module">
+      import 'https://www.verovio.org/javascript/app/verovio-app.js';
+        const app = new Verovio.App(document.getElementById("app"), {});
 
-
-	<div id="app">Verovio is loading...</div>
-    <script type="module">
-        import 'https://www.verovio.org/javascript/app/verovio-app.js';
-        
-        const options = {
-            defaultView: 'responsive', // default is 'responsive', alternative is 'document'
-            defaultZoom: 3, // 0-7, default is 4
-            enableResponsive: true, // default is true
-            enableDocument: true // default is true
-        }
-        
-        // A MusicXML file
-        var file = 'data/week5.mei';
-        // A MEI file
-        //var file = 'https://www.verovio.org/editor/brahms.mei';
-        
-        const app = new Verovio.App(document.getElementById("app"), options);
-        fetch(file)
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(text) {
-                app.loadData(text);
-            });
+    // Load a file (MEI or MusicXML)
+    fetch("data/week5.mei")
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(text) {
+            app.loadData(text);
+        });
     </script>
-    </div>
-
-	<footer>
+  <script>
+    // Get, parse, and show TEI data
+    var CETEIcean = new CETEI()
+    CETEIcean.getHTML5("data/week5.mei", function(data) {
+      document.getElementById("TEI").appendChild(data)
+    })
+    // Get, parse and show MEI header data
+    var CETEI4MEI = new CETEI()
+    CETEI4MEI.addBehaviors({
+      namespaces: {
+        mei: "http://www.music-encoding.org/ns/mei"
+      }
+    })
+    CETEI4MEI.getHTML5("data/week5.mei", function(data) {
+      // get header
+      var meiHead = data.querySelector('mei-meiHead')
+      document.getElementById("MEImeta").appendChild(meiHead)
+    })
+    var vrvToolkit = new verovio.toolkit()
+    vrvToolkit.setOptions(options = {
+        pageHeight: 500,
+        pageWidth: 1000,
+        ignoreLayout: 1,
+        border: 20,
+        scale: 50,
+        adjustPageHeight: true
+    })
+    fetch("data/week5.mei").then(function( response ) {
+        response.text().then(function( data ) {
+          var svg = vrvToolkit.renderData(data, {})
+          document.getElementById('MEI').innerHTML = svg
+        })
+    })
+  </script>
+  </div>
+	</div>
+</body>
+<footer><p>Score rendering provided by <a href="http://www.verovio.org">Verovio</a>. Metadata rendered by <a href="https://github.com/TEIC/CETEIcean/"> CETEIcean</a>.</p></footer>
+  	<footer>
 	<div id="menu">
 		<a href="index.html">Homepage</a>
 	</div>
 	</footer>
-    
-</body>
 </html>
